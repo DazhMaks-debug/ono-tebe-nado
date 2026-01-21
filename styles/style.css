@@ -156,7 +156,7 @@
   font-family: Raleway;
 }
 
-/* === ЛОТЫ === */
+/* === ЛОТЫ (ИСПРАВЛЕНО!) === */
 .lots {
   padding: 180px 50px;
   width: 1100px;
@@ -173,15 +173,16 @@
 
 .lots__card-list {
   display: flex;
-  gap: 25px;
+  justify-content: space-between; /* Равномерное распределение */
   margin: 0 0 30px 0;
   padding: 0;
   list-style: none;
+  gap: 25px;
 }
 
 .lots__card-list-item {
-  flex: 0 0 430px;
-  min-height: 450px;
+  flex: 0 0 334px; /* Ширина карточки 334px */
+  min-height: 563px; /* Высота по макету */
 }
 
 .card-link {
@@ -222,6 +223,7 @@
   line-height: 1.2;
   text-decoration: underline;
   text-transform: uppercase;
+  margin-bottom: 30px;
 }
 
 .card__text {
@@ -240,7 +242,7 @@
 /* === ОБ АУКЦИОНЕ === */
 .about {
   display: grid;
-  grid-template-columns: 430px 1fr;
+  grid-template-columns: 334px 1fr; /* Исправлено: 334px вместо 430px */
   gap: 25px;
   padding: 0 50px 180px;
   width: 1100px;
@@ -350,5 +352,3 @@
   width: 48px;
   height: 48px;
 }
-
-/* === УДАЛЯЕМ ВСЕ МЕДИАЗАПРОСЫ - ФИКСИРОВАННАЯ ШИРИНА === */
