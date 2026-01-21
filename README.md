@@ -4,7 +4,7 @@
 
 ## Ссылка на проект
 
-https://github.com/ваш-логин/ono-tebe-nado-ad
+https://github.com/ваш-логин/ono-tebe-nado
 
 ## Описание
 
