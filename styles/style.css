@@ -2,45 +2,7 @@
 :root {
   --color-black: #000;
   --color-white: #fff;
-  --color-gray: #545050;
   --color-overlay: rgba(0, 0, 0, 0.6);
-}
-
-/* Сброс стилей и базовые настройки */
-*,
-*::before,
-*::after {
-  box-sizing: border-box;
-}
-
-body {
-  min-width: 1100px;
-  margin: 0;
-  font-family: Raleway, sans-serif;
-  font-weight: 400;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-ul,
-ol,
-li,
-blockquote {
-  margin: 0;
-  padding: 0;
-}
-
-a {
-  color: inherit;
-}
-
-img {
-  width: 100%;
 }
 
 /* === ШАПКА === */
@@ -49,13 +11,12 @@ img {
   grid-template-columns: 1fr min-content 1fr;
   align-items: center;
   padding: 92px 50px;
-  font-size: 18px;
 }
 
 .header__links-list {
   display: flex;
   gap: 32px;
-  list-style-type: none;
+  list-style: none;
   padding: 0;
   margin: 0;
 }
@@ -69,6 +30,7 @@ img {
 }
 
 .header__link {
+  font-size: 18px;
   text-decoration: none;
   border-bottom: 1px solid currentColor;
 }
@@ -91,11 +53,11 @@ img {
   justify-self: end;
   max-width: 240px;
   font-style: normal;
-  line-height: 24.3px;
-  text-align: right;
+  font-size: 18px;
+  line-height: 1.35;
 }
 
-.address a {
+.header__address a {
   display: block;
   text-decoration: none;
   border-bottom: 1px solid currentColor;
@@ -124,30 +86,27 @@ img {
   z-index: 1;
   font-size: 100px;
   font-weight: 700;
-  line-height: 115px;
+  line-height: 1.15;
   letter-spacing: 30px;
   margin-bottom: 135px;
 }
 
 .aligned-text {
   display: block;
-  line-height: 1.15;
 }
 
 .aligned-text:first-child {
   margin-bottom: 20px;
-  letter-spacing: 30px;
 }
 
 .aligned-text:nth-child(2) {
   text-align: center;
-  margin: 0 60px 20px 0;
-  letter-spacing: 30px;
+  margin-bottom: 20px;
+  margin-right: 60px;
 }
 
 .aligned-text:last-child {
   text-align: right;
-  letter-spacing: 30px;
 }
 
 .letter-spacing-extended {
@@ -155,14 +114,14 @@ img {
 }
 
 .no-letter-spacing {
-  letter-spacing: normal;
+  letter-spacing: 0;
 }
 
 .cover__description {
   position: relative;
   z-index: 1;
   display: flex;
-  justify-content: flex-end;
+  justify-content: end;
   align-items: center;
   gap: 78px;
 }
@@ -182,7 +141,7 @@ img {
   text-transform: uppercase;
   background-color: transparent;
   cursor: pointer;
-  font-family: inherit;
+  font-family: Raleway;
 }
 
 /* === ЛОТЫ === */
@@ -207,7 +166,7 @@ img {
 }
 
 .lots__card-list-item {
-  flex: 1 0 430px;
+  flex: 1 1 430px;
   min-height: 450px;
 }
 
@@ -246,7 +205,7 @@ img {
   z-index: 1;
   font-size: 22px;
   font-weight: 700;
-  line-height: 26.4px;
+  line-height: 1.2;
   text-decoration: underline;
   text-transform: uppercase;
 }
@@ -255,7 +214,7 @@ img {
   position: relative;
   z-index: 1;
   font-size: 20px;
-  line-height: 24px;
+  line-height: 1.2;
 }
 
 .lots__look-more-link {
@@ -272,11 +231,6 @@ img {
   padding: 0 50px 180px;
 }
 
-.about__column:first-child {
-  display: flex;
-  justify-content: center;
-}
-
 .about__logo {
   width: 240px;
   height: 240px;
@@ -285,6 +239,7 @@ img {
   display: flex;
   align-items: center;
   justify-content: center;
+  margin: 0 auto;
 }
 
 .about__logo-image {
@@ -301,7 +256,7 @@ img {
 
 .about__text {
   font-size: 20px;
-  line-height: 24px;
+  line-height: 1.2;
 }
 
 .about__text p:first-child {
@@ -318,14 +273,14 @@ img {
   grid-template-columns: 1fr 1fr 1fr;
   align-items: start;
   padding: 0 50px 90px;
-  font-size: 18px;
 }
 
 .footer .address {
   justify-self: start;
   max-width: 240px;
   font-style: normal;
-  line-height: 24.3px;
+  font-size: 18px;
+  line-height: 1.35;
 }
 
 .footer__menu {
@@ -348,6 +303,7 @@ img {
 }
 
 .footer__menu-link {
+  font-size: 18px;
   text-decoration: none;
   border-bottom: 1px solid currentColor;
 }
@@ -377,41 +333,26 @@ img {
 }
 
 /* === ИСПРАВЛЕНИЯ ДЛЯ 1100px === */
-@media (max-width: 1100px) {
+@media (width <= 1100px) {
   body {
-    min-width: 1100px;
+    min-width: 768px;
     overflow-x: auto;
   }
   
-  /* Фиксируем ширину контейнеров */
-  .header,
-  .cover,
-  .lots,
-  .about,
-  .footer {
-    width: 1100px;
+  /* Фиксируем размеры карточек */
+  .lots__card-list-item {
+    flex: 0 0 430px;
     margin: 0 auto;
-    box-sizing: border-box;
   }
   
-  /* Исправляем заголовок обложки */
+  /* Центрируем карточки */
+  .lots__card-list {
+    justify-content: center;
+  }
+  
+  /* Исправляем заголовок */
   .cover__title {
     font-size: 100px;
-    line-height: 115px;
-    letter-spacing: 30px;
-    margin-bottom: 135px;
-  }
-  
-  .aligned-text:first-child {
-    letter-spacing: 30px;
-  }
-  
-  .aligned-text:nth-child(2) {
-    letter-spacing: 30px;
-    margin-right: 60px;
-  }
-  
-  .aligned-text:last-child {
     letter-spacing: 30px;
   }
   
@@ -419,104 +360,17 @@ img {
     letter-spacing: 60px;
   }
   
-  /* Исправляем карточки */
-  .lots__card-list {
-    justify-content: flex-start;
-  }
-  
-  .lots__card-list-item {
-    flex: 0 0 430px;
-    min-height: 450px;
-  }
-  
-  /* Исправляем секцию "Об аукционе" */
+  /* Исправляем секцию about */
   .about {
-    grid-template-columns: 430px 1fr;
-    gap: 25px;
+    grid-template-columns: 1fr;
+    gap: 0;
   }
   
   .about__logo {
-    width: 240px;
-    height: 240px;
+    margin-bottom: 40px;
   }
   
   .about__title {
-    margin: 100px 0 100px;
-  }
-  
-  /* Исправляем подвал */
-  .footer {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    align-items: start;
-  }
-}
-
-/* Точные исправления для Pixel Perfect */
-@media (width: 1100px) {
-  .header {
-    padding: 92px 50px 92px;
-  }
-  
-  .cover {
-    padding: 165px 50px 50px;
-    min-height: 757px;
-  }
-  
-  .cover__title {
-    padding-right: 20px; /* компенсация letter-spacing */
-  }
-  
-  .lots {
-    padding: 180px 50px;
-  }
-  
-  .lots__heading {
-    margin: 0 0 27px 40px;
-  }
-  
-  .about {
-    padding: 0 50px 180px;
-  }
-  
-  .footer {
-    padding: 0 50px 90px;
-  }
-  
-  /* Фиксируем позиции гридов */
-  .header__logo {
-    margin: 0 auto;
-  }
-  
-  .header__address {
-    padding-left: 0;
-  }
-  
-  /* Исправляем текст в обложке */
-  .cover__description-text {
-    white-space: nowrap;
-  }
-  
-  /* Исправляем карточки */
-  .card {
-    padding: 50px 40px;
-  }
-  
-  .card__title {
-    margin-bottom: 30px;
-  }
-  
-  /* Исправляем адрес в футере */
-  .footer .address {
-    text-align: left;
-    padding-left: 0;
-  }
-  
-  .footer__menu {
-    padding: 0 20px;
-  }
-  
-  .footer__social-list {
-    padding-right: 0;
+    margin: 0 0 40px;
   }
 }
