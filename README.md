@@ -4,7 +4,7 @@
 
 ## Ссылка на проект
 
-https://github.com/ваш-логин/ono-tebe-nado
+https://github.com/DazhMaks-debug/ono-tebe-nado
 
 ## Описание
 
